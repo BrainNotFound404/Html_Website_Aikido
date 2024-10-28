@@ -1,0 +1,14 @@
+/* Navbar Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #333;
+  color:aliceblue;
+  overflow: hidden;
+}
+
+
