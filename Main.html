@@ -1,22 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aikdio - Dumkan Dojo</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="main.js"></script>
+    <!-- Font Awesome library, pentru icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
     <!-- Navigation bar -->
-    <nav>
-        <ul class="navbar">
-            <li><a href="#home"> Home</a></li>
-            <li><a href="#program">Program</a></li>
-            <li><a href="#">Origins</a></li>
-            <li><a href="#">Contact</a></li>   
+    <div class="navbar">
+        <ul>
+            <li class="active">
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span class="text">Acasa</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span class="text">Instructori</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-regular fa-calendar"></i>
+                    </span>
+                    <span class="text">Program</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                    <span class="text">Dojo</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-solid fa-images"></i>
+                    </span>
+                    <span class="text">Galerie</span>
+                </a>
+            </li>
+            
         </ul>
-    </nav>
+        <div class="indicator"></div>
+    </div>
 
     <!-- Content -->
     <div style="padding:20px;">
