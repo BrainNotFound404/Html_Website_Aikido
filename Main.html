@@ -5,64 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aikdio - Dumkan Dojo</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="main.js"></script>
+    
     <!-- Font Awesome library, pentru icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"> -->
 </head>
 <body>
 
-    <!-- Navigation bar -->
-    <div class="navbar">
-        <ul>
-            <li class="active">
-                <a href="#">
-                    <span class="icon">
-                        <i class="fa-solid fa-house"></i>
-                    </span>
-                    <span class="text">Acasa</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon">
-                        <i class="fa-solid fa-user"></i>
-                    </span>
-                    <span class="text">Instructori</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon">
-                        <i class="fa-regular fa-calendar"></i>
-                    </span>
-                    <span class="text">Program</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </span>
-                    <span class="text">Dojo</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon">
-                        <i class="fa-solid fa-images"></i>
-                    </span>
-                    <span class="text">Galerie</span>
-                </a>
-            </li>
+    <!-- Navbar -->
+    <div class="navbar-container">
+
+        <!-- Logo -->
+        <div class="logo">
+            <a href="#">
+                <img src="Pictures/logo.jpeg" alt="Aikido Logo">
+            </a>
+            <button class="button" onclick="window.location.href='#'">Dumkan Dojo</button>
+        </div>
+
+        <div class="navbar">
+            <ul>
+                <li class="active">
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="text">Acasa</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span class="text">Instructori</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-regular fa-calendar"></i></span>
+                        <span class="text">Program</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="delayed-redirect" data-target="Pages/Dojo.html">
+                        <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                        <span class="text">Dojo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-images"></i></span>
+                        <span class="text">Galerie</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
             
-        </ul>
-        <div class="indicator"></div>
+        </div>
+        <div class="empty-space">
+            
+        </div>
     </div>
 
-    <!-- Content -->
-    <div style="padding:20px;">
-        <h1>Welcome to the world of Aikido</h1>
+     <!-- Content -->
+     <div class="main-content">
+
+        <div class="header">
+            <div class="first-line">
+                <img src="Pictures/Samurai1.png" alt="Samurai1">
+                <h1>Descoperă Lumea Artelor Marțiale!</h1>
+                <img src="Pictures/Samurai2.png" alt="Samurai2">
+            </div>
+            
+            <p>
+                Aikido este mai mult decât o simplă artă marțială — este o cale de armonie, 
+                disciplină și autocunoaștere. Practicată de oameni din întreaga lume, Aikido 
+                îmbină tehnici eficiente de apărare cu principii de respect, echilibru și 
+                non-violență.
+            </p>
+            <p>
+                Alătură-te familiei noastre la Dumkan Dojo pentru a descoperi secretele 
+                acestei arte unice. Fie că ești începător sau practician experimentat, 
+                avem cursuri care se potrivesc fiecărui nivel.
+            </p>
+        </div>
+        
+        <div class="icons">
+            <div class="aikikai">
+                <h3>Aikikai</h3>
+                <img src="Pictures/Aikikai.jpg" alt="Aikikai Romania">
+                <h3>Romania</h3>
+            </div>
+            
+            <img src="Pictures/Logo.jpeg" alt="Dumkan Dojo" id="logo">
+            <ul class="promo">
+                <li><h1>Esti Interesat?</h1></li>
+                <li><button class="button" onclick="window.location.href='#'">Contactează-ne</button></li>
+            </ul>
+            
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="Pictures/SeminarCopii.jpg" alt="Aikido Photo 1" class="active">
+                <img src="Pictures/AniversareTenchi.jpg" alt="Aikido Photo 2">
+                <img src="Pictures/Cluj2023.jpg" alt="Aikido Photo 3">
+            </div>
+            <button class="carousel-arrow left-arrow">&#10094;</button>
+            <button class="carousel-arrow right-arrow">&#10095;</button>
+        </div>
+
     </div>
 
+    <section class="info-section">
+        <div class="info-content">
+          <div class="left-column">
+            <h2>Ce este Aikido?</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dicta expedita recusandae, laudantium doloremque rem natus vero autem sapiente, corrupti odit distinctio adipisci totam sunt provident itaque maxime soluta cumque delectus voluptas. Maiores doloremque amet minima adipisci dignissimos porro voluptas assumenda ad repudiandae nulla distinctio necessitatibus dolore tenetur unde officiis, molestias voluptatibus a, dolorem asperiores nesciunt dolor? Fugit praesentium optio itaque illo consequatur esse, rem sequi aliquam corrupti aperiam deserunt vitae recusandae, ipsa dignissimos mollitia aut non quis necessitatibus ab. Cum sapiente id repudiandae officia harum omnis at? Corporis distinctio vitae voluptatem sequi quaerat ab laudantium enim temporibus ipsum, numquam tempora ducimus expedita voluptate repellendus deserunt consequatur odit quasi ea delectus maiores error quod sit? Id, sit reiciendis, veniam quibusdam, sint nesciunt dolore ullam fugiat expedita commodi dolores amet possimus nobis rerum dicta <br> Eum necessitatibus voluptatibus error unde. Alias nisi, magni, nobis quibusdam ipsum aliquid libero repudiandae blanditiis pariatur deserunt sit itaque odio quas dolores quia adipisci voluptatum asperiores recusandae modi deleniti delectus hic voluptas ullam voluptates. Soluta neque laudantium hic perferendis quidem nisi sequi odio magni quos veritatis ea enim, molestias esse a doloribus repellendus, vel sapiente cumque nihil, voluptate aut! Id in totam explicabo vitae error cumque ad!</p>
+      
+            <h2>Cine suntem noi?</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rerum sint necessitatibus natus doloribus, dolore beatae nesciunt impedit mollitia accusantium excepturi error nam. In et tenetur suscipit aspernatur nobis delectus consectetur laboriosam, animi minus maxime. Officiis, molestiae ut? Tenetur, repellat? Veritatis odio suscipit corrupti aliquid! Nostrum culpa nam dignissimos eos perspiciatis sapiente recusandae cumque assumenda iusto totam inventore atque amet facere minima rem laudantium soluta ex, distinctio expedita? Quia tempore et quisquam, quis laborum quam unde nesciunt cum voluptate perferendis, adipisci, omnis architecto veniam delectus eos. Fugit enim architecto, cupiditate, aperiam ratione itaque debitis eaque tempora beatae, rerum quae odit? Voluptas similique laudantium impedit dolorum vel consequuntur obcaecati ut odit ullam illum, iste sed maiores repellat amet recusandae. Placeat corrupti doloremque unde repudiandae expedita, esse nulla consectetur possimus deserunt amet at ea. <br> Ut sint quisquam non, voluptates omnis atque rem, quia commodi adipisci voluptatum quod magni? Nostrum rerum laudantium a vero laboriosam totam ut pariatur. Expedita itaque aperiam est accusantium eius officiis commodi doloremque, totam fugiat ab consectetur recusandae ullam dolore numquam fugit quod facilis, suscipit incidunt voluptate amet repellat blanditiis.<br> Aut odit eveniet ratione perspiciatis nobis eos tenetur corporis, rerum fugit aliquid repudiandae fuga atque voluptatibus iusto reiciendis impedit magni animi illum vel praesentium id? Accusamus aut voluptate vero, adipisci quos consequuntur, unde nisi minima fuga cum debitis beatae aperiam incidunt voluptates voluptatum quaerat repellat earum assumenda nam laborum atque doloribus qui placeat soluta! Magni, quisquam mollitia dolorem suscipit doloremque libero ea tempore quas aliquid praesentium quasi! Eveniet asperiores praesentium est repellendus iste voluptatibus repudiandae exercitationem earum nostrum, veritatis rem reiciendis sapiente quas perferendis incidunt, itaque distinctio? Quod facere, quos accusamus incidunt fuga blanditiis. Quod incidunt vitae vel dolorem tenetur laudantium amet eligendi dolore dolores id commodi esse animi sequi sint possimus non consectetur, repudiandae eveniet fuga quaerat dolorum.</p>
+      
+            <h2>De ce să vii la noi?</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse nemo neque quam commodi enim at architecto sapiente consequatur, voluptatibus totam eaque omnis ea rem itaque aliquam accusantium blanditiis explicabo! Quam nostrum consectetur dolor nemo porro pariatur dolorum sint minima obcaecati reiciendis quibusdam illum tenetur ipsam accusamus incidunt earum corrupti, repellendus cumque? Iusto architecto atque delectus officiis vitae suscipit distinctio vel! Culpa exercitationem eum dolorum sed unde adipisci quas eaque est iusto quo magnam temporibus provident iure, quae nesciunt accusamus impedit earum consectetur aut dolor animi officiis ducimus? Quidem, nobis nihil. Voluptas itaque nemo eos voluptatum inventore animi maxime nostrum temporibus provident non? Sapiente, laborum! Ullam praesentium assumenda ex, eum deserunt dolor maiores, eveniet ut illo ducimus neque maxime necessitatibus commodi nobis quod culpa expedita. Velit mollitia labore hic illo, est porro nemo, blanditiis veniam aperiam officiis alias harum eligendi! <br> Ea temporibus dicta error animi quidem similique harum necessitatibus nulla. Explicabo necessitatibus rerum, veniam assumenda cum vitae odio autem magnam voluptate at illum vel, voluptatem magni, eveniet veritatis consequuntur quod. Debitis, quis tenetur! Mollitia et recusandae quibusdam veniam dolore ut, est blanditiis expedita rerum nostrum aliquam commodi nulla maxime illo dolores delectus harum similique dolorem officia praesentium. Sapiente distinctio ipsa officia?</p>
+          </div>
+      
+          <div class="right-column">
+            <img src="Pictures/SenseiPoza1.jpg" alt="Sensei poza" class="sensei-img">
+
+            <img src="Pictures/Robert.jpg" alt="Sensei poza" class="sensei-img">
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="Pictures/Logo.jpeg" alt="Logo" class="footer-img">
+            <div class="footer-text">
+                <p>Dumkan Dojo</p>
+                <div class="footer-icons">
+
+                    <!-- Location Icon and Address -->
+                    <a href="https://www.google.com/maps/place/Dumkan+Dojo/@44.4188029,26.0157275,18z/data=!4m15!1m8!3m7!1s0x40b200467eecfb5f:0x3482d02a1b0aa147!2sAleea+Parva,+București!3b1!8m2!3d44.4185845!4d26.0165402!16s%2Fg%2F1v_z2vd2!3m5!1s0x40b20049c8f028fd:0xefedb487bc6cd532!8m2!3d44.418856!4d26.0156687!16s%2Fg%2F11f3n6qgph?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i> Sala de sport a Școlii Gimnaziale “Sf. Andrei”, Aleea Parva nr. 3, cartier Drumul Taberei, Sector 6, București
+                    </a>
+
+                    <!-- Phone Icon and Phone Number -->
+                    <a href="tel:+1234567890">
+                        <i class="fas fa-phone-alt"></i> +4 0722931974
+                    </a>
+
+                    <!-- Email Icon and Email Address -->
+                    <a href="mailto:dumitrescusabin@yahoo.com">
+                        <i class="fas fa-envelope"></i> dumitrescusabin@yahoo.com
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=100063638407234" target="_blank">
+                        <i class="fab fa-facebook"></i> Dumkan Dojo
+                    </a>
+
+                    <a href="https://www.youtube.com/channel/YourYouTubeChannel" target="_blank">
+                        <i class="fab fa-youtube"></i> Sabin Dumitrescu
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
