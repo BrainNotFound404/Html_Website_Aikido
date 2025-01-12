@@ -21,7 +21,7 @@ h2 {
     color: #555;
   }
 
-/* Moving Text */
+/* Text miscator */
 .moving-text {
     
     overflow: hidden; 
@@ -98,16 +98,20 @@ h2 {
 
 .same-line {
     display: flex;
-    justify-content: center;  /* Center the content horizontally */
-    align-items: center;      /* Center the content vertically */
-    gap: 30px;                /* Space between image and title */
+    justify-content: center;  
+    align-items: center;      
+    gap: 30px;               
   }
 
-
-
-.special-image {
+.same-line .container-special {
+    
     background-color: #fff;
     border-radius: 10px;
+    width: 150px;
+}
+
+.special-image {
+    
     margin: 40px 0;
     animation: cycle-images 27s infinite ease-in-out; 
 }

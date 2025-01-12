@@ -51,22 +51,17 @@ indicators.forEach((indicator, index) => {
 // Initializam caruselul
 updateCarousel();
 
-
-//Animatie smooth intre pagini
-
-
-
-// Select all elements with the 'delayed-link' class
+// Selectez elementul cu clasa delayed link (ar trebui sa fie doar unul)
 const links = document.querySelectorAll('.delayed-redirect');
 
 links.forEach(link => {
   link.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent immediate navigation
-    const targetUrl = link.getAttribute('data-target'); // Get the target URL from the data attribute
+    event.preventDefault(); // Nu navigam instant, lasam sa se efectueze tranzitiile inainte
+    const targetUrl = link.getAttribute('data-target'); // Luam path-ul din data-target
 
 
     setTimeout(() => {
-      window.location.href = targetUrl; // Redirect to the target URL
-    }, 1000); // 2-second delay
+      window.location.href = targetUrl; // Redirectionam utilizatorul catre pagina dorita
+    }, 1000); // delay o secunda
   });
 });

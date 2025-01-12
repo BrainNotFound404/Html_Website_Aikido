@@ -4,13 +4,12 @@ body {
     background: #dddada;
   }
 
-  /* Full-width Image */
+
 .full-width-image img {
     width: 100%;
     height: auto;
   }
   
-  /* Columns Section */
   .columns {
     display: flex;
     padding: 20px;
@@ -53,6 +52,7 @@ body {
     color: rgb(120, 120, 235);
     font-weight: 900;
   }
+
   /* Sectiune centrata */
   .community-section {
     text-align: center;
@@ -63,7 +63,7 @@ body {
     font-size: 2.5em;
   }
   
-  /* Image and Dropdown Section */
+  /* Poza de profil si sectiunea dropdown */
 .review {
     margin-inline: 25vh;
     display: flex;
@@ -107,13 +107,13 @@ body {
     transition: transform 0.3s ease;
   }
   
-  /* Rotate Arrow When Checkbox is Checked */
+  /* Rotim sageata in momentul in care checkbox ul este checked */
   .dropdown-toggle:checked + .name-dropdown .fa-arrow-down {
     color: rgb(120, 120, 235);
     transform: rotate(180deg);
   }
   
-  /* Dropdown Menu (UL and LI) */
+  /* Meniul Dropdown*/
   .dropdown-menu {
     list-style-type: none;
     margin: 0;
@@ -124,13 +124,12 @@ body {
     overflow: hidden;
   }
   
-  /* Show Dropdown When Checkbox is Checked */
+  /* Afisam dropdown meniul prin a ii da max-height */
   .dropdown-toggle:checked ~ .dropdown-menu {
     max-height: 100%;
     opacity: 1;
   }
-  
-  /* Style for Each Menu Item */
+
   .dropdown-text {
     padding: 10px;
     background-color: #fff;

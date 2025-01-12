@@ -4,9 +4,8 @@
 html {
   scroll-behavior: smooth;
 }
-/*Navbar*/
 
-/* Navbar Container */
+/* Container Navbar  */
 .navbar-container {
   top: 0;
   position: sticky;
@@ -28,8 +27,8 @@ html {
 
 .navbar-container .logo {
   display: flex;
-  align-items: center; /* Centers the text vertically with the image */
-  text-decoration: none; /* Removes underline from the hyperlink */
+  align-items: center; 
+  text-decoration: none;
 }
 
 .navbar-container .logo button {
@@ -47,7 +46,7 @@ html {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 3px solid #222327;
+  border: 3px solid #333;
   margin-left: 20px; 
   margin-right: 40px; 
   margin-top: 5px;
@@ -63,7 +62,7 @@ html {
   align-items: center;
   border-radius: 10px;
   font-family: "Poppins", sans-serif;
-  transition: right 0.3s ease-in-out; /* Smooth slide-in animation */
+  transition: right 0.3s ease-in-out; 
 }
 
 .navbar-container .empty-space {
@@ -72,7 +71,7 @@ html {
 }
 
 .navbar a .icon, .navbar a .text {
-  color: #222327;
+  color: #333;
 }
 
 .navbar ul {
@@ -139,7 +138,7 @@ html {
   background: tomato;
   box-sizing: border-box;
   border-radius: 50%;
-  border: 6px solid #222327;
+  border: 6px solid #333;
   transition: 0.5s;
 }
 
@@ -156,13 +155,13 @@ html {
 .navbar .indicator::before {
   left: -22px;
   border-top-right-radius: 20px;
-  box-shadow: 1px -10px 0 0 #222327;
+  box-shadow: 1px -10px 0 0 #333;
 }
 
 .navbar .indicator::after {
   right: -22px;
   border-top-left-radius: 20px;
-  box-shadow: -1px -10px 0 0 #222327;
+  box-shadow: -1px -10px 0 0 #333;
 }
 
 .navbar li.active~.indicator {
@@ -175,11 +174,10 @@ html {
 .navbar li:nth-child(4).active~.indicator {--x: 210px}
 .navbar li:nth-child(5).active~.indicator {--x: 280px}
 
-/* Responsive Layout for Small Screens */
 @media (max-width: 768px) {
   .navbar-container {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Align items to the left */
+    flex-direction: column; 
+    align-items: center;
     justify-content: center;
   }
 
@@ -317,7 +315,6 @@ body {
 /* Carousel Styling */
 .carousel {
   position: relative;
-  width: 80%;
   max-width: 800px;
   margin: 50px auto;
   overflow: hidden;
@@ -331,9 +328,9 @@ body {
 }
 
 .carousel-images img {
-  width: 100%; /* Make the images wider */
-  height: auto; /* Ensure they fit the height of the carousel */
-  object-fit: cover; /* Ensures the images are properly scaled */
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
 }
 
 .carousel-arrow {
@@ -443,8 +440,8 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #333; /* Dark background for the footer */
-  color: #fff; /* White text color */
+  background-color: #333; 
+  color: #fff; 
   padding: 20px 10%;
   text-align: center;
   width: 100%;
@@ -489,14 +486,14 @@ body {
 }
 
 .footer-icons a:hover {
-  color: #f39c12; /* Change color on hover */
+  color: #f39c12; 
 }
 
 .footer-icons i {
   margin-right: 10px;
 }
 
-/* Responsive for smaller screens */
+
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
