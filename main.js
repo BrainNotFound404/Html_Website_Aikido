@@ -1,3 +1,5 @@
+//Nav Bar
+
 //Modificam clasa de active a elementelor in functie de butonul apasat
 
 const $list = document.querySelectorAll('.navbar li');
@@ -15,6 +17,61 @@ $list.forEach(($li) => {
         activeLink,
     );
 });
+
+// Selectez elementul cu clasa delayed link (ar trebui sa fie doar unul)
+const links = document.querySelectorAll('.delayed-redirect');
+
+links.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // Nu navigam instant, lasam sa se efectueze tranzitiile inainte
+    const targetUrl = link.getAttribute('data-target'); // Luam path-ul din data-target
+
+
+    setTimeout(() => {
+      window.location.href = targetUrl; // Redirectionam utilizatorul catre pagina dorita
+    }, 1000); // delay o secunda
+  });
+});
+
+
+
+// Generate text from the list with random color
+const randomTextElement = document.getElementById("randomText");
+const randomMessages = [
+  "勇気を出してください",
+  "学び続ける",
+  "あなたはうまくやっています",
+  "自分を信じて",
+  "夢を追いかけて"
+];
+const randomIndex = Math.floor(Math.random() * randomMessages.length);
+const randomMessage = randomMessages[randomIndex];
+const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
+randomTextElement.textContent = randomMessage;
+randomTextElement.style.color = randomColor;
+
+// Store user data in localStorage
+function storeMessage() {
+    const userName = document.getElementById("userName").value.trim();
+    const userMessage = document.getElementById("userMessage").value.trim();
+  
+    // Regular expression to validate the name (letters and spaces only)
+    const nameRegex = /^[a-zA-Z\s]+$/;
+  
+    if (!nameRegex.test(userName)) {
+      alert("Nume invalid. Un nume trebuie sa contina doar litere si spatii");
+      return;
+    }
+  
+    if (userName && userMessage) {
+      localStorage.setItem(userName, userMessage);
+      alert(`Mesajul lui ${userName} a fost salvat`);
+    } else {
+      alert("Va rugam sa completati ambele sectiuni");
+    }
+  }
+
 
 //Facem caruselul functional
 
@@ -51,17 +108,3 @@ indicators.forEach((indicator, index) => {
 // Initializam caruselul
 updateCarousel();
 
-// Selectez elementul cu clasa delayed link (ar trebui sa fie doar unul)
-const links = document.querySelectorAll('.delayed-redirect');
-
-links.forEach(link => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault(); // Nu navigam instant, lasam sa se efectueze tranzitiile inainte
-    const targetUrl = link.getAttribute('data-target'); // Luam path-ul din data-target
-
-
-    setTimeout(() => {
-      window.location.href = targetUrl; // Redirectionam utilizatorul catre pagina dorita
-    }, 1000); // delay o secunda
-  });
-});

@@ -85,6 +85,33 @@
                 avem cursuri care se potrivesc fiecărui nivel.
             </p>
         </div>
+
+        <div class="FeedBack_Container">
+            <!-- Sectiunea cu text -->
+            <div class="FeedBack-Column Text_FeedBack">
+              <div class="FeedBack_FullText">
+                <h3>Care este părerea ta despre Aikido?</h3>
+                <p class="small-feedback-text" id="randomText"></p>
+              </div>
+            </div>
+        
+            <!-- Sectiunea cu mesajul -->
+            <div class="FeedBack-Column Message_FeedBack">
+                <label for="userName">Introduceti Numele:</label>
+
+                <input type="text" id="userName" placeholder="Ion Popescu">
+
+                <textarea id="userMessage" placeholder="Mesajul tau"></textarea>
+
+                <button onclick="storeMessage()">Trimite mesajul
+                    <span class="b1"></span>
+                    <span class="b2"></span>
+                    <span class="b3"></span>
+                    <span class="b4"></span>
+                </button>
+                
+            </div>
+        </div>
         
         <div class="icons">
             <div class="aikikai">
@@ -96,7 +123,7 @@
             <img src="Pictures/Logo.jpeg" alt="Dumkan Dojo" id="logo">
             <ul class="promo">
                 <li><h1>Esti Interesat?</h1></li>
-                <li><button class="button" onclick="window.location.href='Pages/Dojo.html'">Contactează-ne</button></li>
+                <li><button class="button" onclick="window.location.href='Pages/Login.html'">Creează-ți un cont</button></li>
             </ul>
             
         </div>

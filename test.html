@@ -3,15 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delayed Navigation with Animations</title>
-  <link rel="stylesheet" href="test.css">
-  <script defer src="test.js"></script>
+  <title>Interactive Features Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    canvas {
+      border: 1px solid #ccc;
+      display: block;
+      margin: 10px auto;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input, .form-group textarea, .form-group button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+    }
+
+    svg {
+      display: block;
+      margin: 10px auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Welcome to the Page</h1>
-    <p>This text will fade out before redirecting to the next page.</p>
-    <a href="#" class="delayed-link">Go to Next Page</a>
+  <div class="container">
+    <h2>Interactive Features Demo</h2>
+
+    <!-- Dynamic Style and Event Propagation -->
+    <div class="section" id="stylePropagationSection">
+      <h3>Dynamic Styles and Event Propagation</h3>
+      <button id="colorButton">Change Background Color</button>
+      <div id="colorBox" style="width: 100%; height: 50px; background: lightblue; margin-top: 10px;"></div>
+    </div>
+
+    <!-- Form Validation -->
+    <div class="section" id="formValidationSection">
+      <h3>Form Validation</h3>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" placeholder="Enter your email">
+      </div>
+      <button id="validateButton">Validate Email</button>
+    </div>
+
+    <!-- AJAX Request -->
+    <div class="section" id="ajaxRequestSection">
+      <h3>AJAX Request</h3>
+      <button id="fetchDataButton">Fetch Data</button>
+      <div id="dataContainer" style="margin-top: 10px; background: #f0f0f0; padding: 10px; border-radius: 5px;">
+        <!-- JSON data will be displayed here -->
+      </div>
+    </div>
+
+    <!-- Login and Logout -->
+    <div class="section" id="sessionManagementSection">
+      <h3>Session Management</h3>
+      <div id="loginSection">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <button id="loginButton">Login</button>
+      </div>
+      <div id="logoutSection" class="hidden">
+        <p>Welcome, <span id="loggedInUser"></span>!</p>
+        <button id="logoutButton">Logout</button>
+      </div>
+    </div>
+
+    <!-- Canvas and SVG -->
+    <div class="section" id="graphicsSection">
+      <h3>Canvas and SVG</h3>
+      <canvas id="myCanvas" width="300" height="150"></canvas>
+      <svg id="mySVG" width="300" height="150">
+        <rect x="10" y="10" width="100" height="50" fill="red"></rect>
+      </svg>
+    </div>
   </div>
+
+  <script>
+    // Dynamic Styles and Event Propagation
+    document.getElementById("colorButton").addEventListener("click", (event) => {
+      const colorBox = document.getElementById("colorBox");
+      const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+      colorBox.style.backgroundColor = randomColor;
+      event.stopPropagation();
+    });
+
+    // Form Validation
+    document.getElementById("validateButton").addEventListener("click", () => {
+      const email = document.getElementById("email").value;
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      alert(emailRegex.test(email) ? "Valid email!" : "Invalid email.");
+    });
+
+    // AJAX Request
+    document.getElementById("fetchDataButton").addEventListener("click", () => {
+      fetch("data.json") // Replace with the actual path to your JSON file
+        .then((response) => response.json())
+        .then((data) => {
+          const container = document.getElementById("dataContainer");
+          container.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    });
+
+    // Session Management
+    const loginButton = document.getElementById("loginButton");
+    const logoutButton = document.getElementById("logoutButton");
+    const loginSection = document.getElementById("loginSection");
+    const logoutSection = document.getElementById("logoutSection");
+    const loggedInUser = document.getElementById("loggedInUser");
+
+    loginButton.addEventListener("click", () => {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username && password) {
+        localStorage.setItem("loggedInUser", username);
+        loggedInUser.textContent = username;
+        loginSection.classList.add("hidden");
+        logoutSection.classList.remove("hidden");
+      } else {
+        alert("Please fill in both username and password.");
+      }
+    });
+
+    logoutButton.addEventListener("click", () => {
+      localStorage.removeItem("loggedInUser");
+      loginSection.classList.remove("hidden");
+      logoutSection.classList.add("hidden");
+    });
+
+    // Initialize session
+    if (localStorage.getItem("loggedInUser")) {
+      loggedInUser.textContent = localStorage.getItem("loggedInUser");
+      loginSection.classList.add("hidden");
+      logoutSection.classList.remove("hidden");
+    }
+
+    // Canvas
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "blue";
+    ctx.fillRect(10, 10, 100, 50);
+
+    // SVG
+    const svg = document.getElementById("mySVG");
+    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    circle.setAttribute("cx", "150");
+    circle.setAttribute("cy", "75");
+    circle.setAttribute("r", "40");
+    circle.setAttribute("fill", "green");
+    svg.appendChild(circle);
+  </script>
 </body>
 </html>
